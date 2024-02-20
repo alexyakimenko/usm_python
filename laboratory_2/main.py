@@ -17,9 +17,7 @@ print(arr)
 
 # arr.append(0)
 arr.extend([0])
-
 print(arr)
-
 print(len(arr)) # list length
 print(max(arr)) # max element
 print(min(arr)) # min element
@@ -102,7 +100,22 @@ print(user)
 set_from_tupple = set(turtle)
 print(set_from_tupple)
 
+# Task 2
 
+prices = [1, 2, 3]
+products = ['milk', 'silk', 'ink']
+
+for i in range(len(products)):
+    print("{}: {}".format(products[i], prices[i]))
+
+
+age = int(input("Lemme know your age: \n"))
+print("Через 5 лет тебе будет " + str(age + 5))
+
+if('milk' in products):
+    print('There is a milk')
+    if('bread' not in products):
+        print('But there is no bread')
 
 
 

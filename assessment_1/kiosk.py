@@ -24,11 +24,11 @@ def print_products():
         print_product(name, info)
 
 def add_product():
-    name = input("Название товара? ").lower()
+    name = input("Название товара? ").lower().strip()
 
     while True: # until there won't be any problems
-        price = input("Цена: ")
-        sold_count = input("Всего продано: ")
+        price = input("Цена: ").strip()
+        sold_count = input("Всего продано: ").strip()
 
         # if both are numbers
         if price.isdigit() and sold_count.isdigit():
@@ -50,7 +50,7 @@ def add_product():
     print_product(name, products_sold.get(name))
 
 def update_product():
-    name = input("Название товара? ").lower()
+    name = input("Название товара? ").lower().strip()
 
     product = products_sold.get(name) 
 
@@ -58,12 +58,12 @@ def update_product():
         return print("Не существует такого товара!!!")
 
     print("Нажмите Enter, чтобы не менять свойство")
-    price = input(f"Цена ({product.get('price')}): ")
+    price = input(f"Цена ({product.get('price')}): ").strip()
     if not (price.isdigit() and price): # if there is nothing or not number
         price = product.get('price') # change nothing
         print(f"Для цена остается значение по умолчанию: {price}")
 
-    sold_count = input(f"Всего продано ({product.get('sold_count')}): ")
+    sold_count = input(f"Всего продано ({product.get('sold_count')}): ").strip()
     if not (sold_count.isdigit() and sold_count):
         sold_count = product.get('sold_count') # keep old value
         print(f"Для количества остается значение по умолчанию: {sold_count}")
@@ -79,7 +79,7 @@ def update_product():
     print_product(name, products_sold.get(name))
 
 def remove_product():
-    name = input("Название товара? ").lower()
+    name = input("Название товара? ").lower().strip()
 
     product = products_sold.get(name) 
 
